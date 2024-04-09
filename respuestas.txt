@@ -3,3 +3,4 @@ Respuesta 2)F)
     No se ve el archivo tp2_1_2.c, desapareció al cambiar de rama
     Eso es un comportamiento esperado de Git. Cuando se cambia de una rama a otra en Git, el directorio de trabajo se actualiza para reflejar el contenido de la nueva rama. Los archivos creados en la rama Opcion_2 están seguros y no han desaparecido. Simplemente no son visibles cuando se está en la rama main porque esos cambios son específicos de la rama Opcion_2.
     El main vuelve a la cima, y se coloca la frase del commit al lado del main
+    Se ve como se añadió la rama Opcion_2 abajo del main
