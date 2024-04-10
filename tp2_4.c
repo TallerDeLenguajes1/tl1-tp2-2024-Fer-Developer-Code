@@ -13,6 +13,8 @@ struct compu
 
 PCs inicializar();
 void mostrarDatos(PCs pc);
+void masVieja(PCs pc[], int n);
+void masVeloz(PCs pcs[], int);
 
 int main()
 {
@@ -23,6 +25,8 @@ int main()
         computadoras[i] = inicializar();
         mostrarDatos(computadoras[i]);
     }
+    masVieja(computadoras, 5);
+    masVeloz(computadoras, 5);
 }
 
 PCs inicializar()
@@ -45,5 +49,43 @@ void mostrarDatos(PCs pc)
     printf("Anio: %d\n", pc.anio);
     printf("Cantidad: %d\n", pc.cantidad);
     printf("Tipo de CPU: %s\n", pc.tipo_cpu);
+    printf("\n");
+}
+
+void masVieja(PCs pc[], int n)
+{
+    int menor = 10000, pcIndex;
+    for (int i = 0; i < n; i++)
+    {
+        if (pc[i].anio < menor)
+        {
+            pcIndex = i;
+            menor = pc[i].anio;
+        }
+    }
+    printf("mas vieja:\n");
+    printf("Velocidad: %d\n", pc[pcIndex].velocidad);
+    printf("Anio: %d\n", pc[pcIndex].anio);
+    printf("Cantidad: %d\n", pc[pcIndex].cantidad);
+    printf("Tipo de CPU: %s\n", pc[pcIndex].tipo_cpu);
+    printf("\n");
+}
+
+void masVeloz(PCs pcs[], int n)
+{
+    int velocidad = 0, pcIndex;
+    for (int i = 0; i < n; i++)
+    {
+        if (pcs[i].velocidad > velocidad)
+        {
+            velocidad = pcs[i].velocidad;
+            pcIndex = i;
+        }
+    }
+    printf("mas veloz:\n");
+    printf("Velocidad: %d\n", pcs[pcIndex].velocidad);
+    printf("Anio: %d\n", pcs[pcIndex].anio);
+    printf("Cantidad: %d\n", pcs[pcIndex].cantidad);
+    printf("Tipo de CPU: %s\n", pcs[pcIndex].tipo_cpu);
     printf("\n");
 }
